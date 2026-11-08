@@ -1,0 +1,51 @@
+# Node / Frontend build artifacts
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Rust / Tauri build artifacts
+src-tauri/target/
+src-tauri/gen/
+src-tauri/WixTools/
+**/target/
+Cargo.lock
+
+# Runtime data, SQLite databases & secrets
+oneklip_data/
+sessions/
+cache/
+secrets/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.db
+cookies.txt
+.env
+.env.*
+
+# Heavy sidecar binaries & AI models (downloaded/bootstrapped at runtime into AppData)
+*.onnx
+*.bin
+ffmpeg.exe
+ffprobe.exe
+yt-dlp.exe
+deno.exe
+whisper-cli.exe
+onnxruntime.dll
+
+# Keep bundled fonts and vcruntime DLLs in src-tauri/resources
+!src-tauri/resources/fonts/*.ttf
+!src-tauri/resources/vcruntime/*.dll
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+*.part

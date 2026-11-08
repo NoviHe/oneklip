@@ -1,0 +1,52 @@
+[package]
+name = "oneklip"
+version = "0.1.0"
+description = "OneKlip — AI Viral Podcast & Livestream Auto-Clipper"
+authors = ["OneKlip Studio"]
+edition = "2021"
+
+[lib]
+name = "oneklip_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["protocol-asset"] }
+tauri-plugin-shell = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-notification = "2"
+
+tokio = { version = "1", features = ["full"] }
+futures-util = "0.3"
+rayon = "1.10"
+parking_lot = "0.12"
+
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+regex = "1"
+url = "2"
+
+rusqlite = { version = "0.32", features = ["bundled"] }
+
+reqwest = { version = "0.12", default-features = false, features = ["json", "stream", "rustls-tls", "gzip"] }
+
+ort = { version = "2.0.0-rc.12", default-features = false, features = ["load-dynamic", "ndarray"] }
+ndarray = "0.17"
+libloading = "0.8"
+
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+imageproc = "0.25"
+ab_glyph = "0.2"
+
+sysinfo = "0.32"
+zip = { version = "2.4", default-features = false, features = ["deflate"] }
+anyhow = "1.0"
+thiserror = "2.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+tracing-appender = "0.2"
